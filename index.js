@@ -7,6 +7,7 @@ import SequelizeStore from 'connect-session-sequelize'
 import UsersRoute from "./routes/user_route.js"
 import ProductsRoute from "./routes/product_route.js"
 import AuthRoute from "./routes/auth_route.js"
+import KTPRoute from "./routes/ktp_route.js"
 
 dotenv.config();
 
@@ -19,18 +20,20 @@ const store = new sessionStore({
 })
 
 // Database Synchronize with Sequelize
-// (async () => {
-//     try {
-//         await db.authenticate();
-//         console.log('Database connected...');
-        
-//         // Melakukan sinkronisasi tabel dengan model
-//         await db.sync(); 
-//         console.log('Database synced...');
-//     } catch (error) {
-//         console.error('Unable to connect to the database:', error);
-//     }
-// })();
+const synchornize = async ()=>{
+    try {
+        await db.authenticate();
+        console.log('Database connected...');
+
+        // Automatically sync all models with the database
+        await db.sync({ alter: true });  // Use { alter: true } for updating existing tables
+        console.log('Database synced...');
+    } catch (error) {
+        console.error('Unable to connect to the database:', error);
+    }
+}
+// Uncomment to synchronize
+// synchornize();
 
 app.use(session({
     secret: process.env.SESSION_SECRET,
@@ -54,6 +57,7 @@ app.use(express.json())
 app.use(UsersRoute);
 app.use(ProductsRoute);
 app.use(AuthRoute);
+app.use(KTPRoute);
 
 // store.sync()    
 

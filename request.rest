@@ -81,3 +81,62 @@ Content-Type: application/json
 /// Delete Product
 DELETE http://localhost:4000/product/ee667655-4ad6-4516-aec2-4213f617d15b
 Content-Type: application/json
+
+//-------------------------------------------------------------------------------------------------------//
+//----------------------------------------------KTP------------------------------------------------------//
+//-------------------------------------------------------------------------------------------------------//
+
+###
+// GET KTP Data
+GET http://localhost:4000/ktp
+
+###
+/// CREATE KTP  Data
+POST http://localhost:4000/ktp
+Content-Type: application/json
+
+{
+    "nik": "312412312431",
+    "nama": "Maulanu",
+    "tempat_lahir": "Grobogan",
+    "tanggal_lahir": "12/2/12",
+    "jenis_kelamin": "Laki-laki",
+    "golongan_darah": "A",
+    "alamat": "PM 1",
+    "rt_rw": "5/3",
+    "kelurahan": "Bandungrejo",
+    "kecamatan": "Mranggen",
+    "agama": "Islam",
+    "status_perkawinan": "Single",
+    "pekerjaan": "Ngoding",
+    "kewarganegaraan": "Indonesia",
+    "file_name": "http://blabla"
+}
+
+###
+/// UPDATE KTP  Data
+PATCH http://localhost:4000/ktp/ab0d0650-b04b-4b22-b8db-7184f533f8f8
+Content-Type: application/json
+
+{
+    "nik": "31241231243",
+    "nama": "Maulane",
+    "tempat_lahir": "Grobogan",
+    "tanggal_lahir": "12/2/12",
+    "jenis_kelamin": "Laki-laki",
+    "golongan_darah": "A",
+    "alamat": "PM 1",
+    "rt_rw": "5/3",
+    "kelurahan": "Bandungrejo",
+    "kecamatan": "Mranggen",
+    "agama": "Islam",
+    "status_perkawinan": "Single",
+    "pekerjaan": "Ngoding",
+    "kewarganegaraan": "Indonesia",
+    "file_name": "http://blabla"
+}
+
+###
+/// Delete KTP Record
+DELETE http://localhost:4000/ktp/ab0d0650-b04b-4b22-b8db-7184f533f8f8
+Content-Type: application/json
