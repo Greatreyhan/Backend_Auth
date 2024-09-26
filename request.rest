@@ -1,0 +1,83 @@
+// Create new user
+POST http://localhost:4000/users
+Content-Type: application/json
+
+{
+    "name": "Maulana Reyhan",
+    "email": "reyhan@gmail.com",
+    "password": "123456",
+    "confpassword": "123456",
+    "role": "user"
+}
+
+###
+// Get All Users
+GET  http://localhost:4000/users
+
+###
+// Get Users By Id
+GET  http://localhost:4000/users/21e93063-3e05-4fae-9259-03b3d52db6ac
+
+###
+// Update Users By Id
+PATCH  http://localhost:4000/users/8354e20e-9ae4-4a8a-a32b-bb89c1f92872
+Content-Type: application/json
+
+{
+    "name": "Maulana Reyhan Saveroo",
+    "email": "reyhanuser@gmail.com",
+    "password": "123456",
+    "confpassword": "123456",
+    "role": "user"
+}
+
+###
+/// Delete User By Id
+DELETE http://localhost:4000/users/bb91529f-4699-4a19-8bb4-747d78086ab5
+
+###
+/// Login User with email and password
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+    "email":"reyhanuser@gmail.com",
+    "password":"123456"
+}
+
+###
+/// Get User Data
+GET http://localhost:4000/me
+
+###
+/// Logout User
+DELETE http://localhost:4000/logout
+
+###
+/// Get All Product
+GET http://localhost:4000/product
+
+###
+/// Get All Product
+POST http://localhost:4000/product
+Content-Type: application/json
+
+{
+    "name":"panipura",
+    "price":"1234"
+}
+
+###
+/// Update Product
+PATCH http://localhost:4000/product/ee667655-4ad6-4516-aec2-4213f617d15b
+Content-Type: application/json
+
+{
+    "name":"panipure",
+    "price":"1234"
+}
+
+###
+/// Delete Product
+DELETE http://localhost:4000/product/ee667655-4ad6-4516-aec2-4213f617d15b
+Content-Type: application/json
