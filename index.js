@@ -52,8 +52,9 @@ app.use(cors({
 
 app.use(express.json())
 
-// Router Part
+app.use('/assets', express.static('public'))
 
+// Router Part
 app.use(UsersRoute);
 app.use(ProductsRoute);
 app.use(AuthRoute);

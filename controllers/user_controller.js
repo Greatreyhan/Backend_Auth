@@ -13,6 +13,30 @@ export const getUser = async (req,res)=>{
     }
 }
 
+export const getUserTotal = async (req,res)=>{
+    try{
+        const response = await Users.count({where:{
+            role: "user"
+        }})
+        res.status(200).json({msg:'Count user Success',data:response})
+    }
+    catch(error){
+        res.status(500).json({msg: error.message})
+    }
+}
+
+export const getAdminTotal = async (req,res)=>{
+    try{
+        const response = await Users.count({where:{
+            role: "admin"
+        }})
+        res.status(200).json({msg:'Count admin Success',data:response})
+    }
+    catch(error){
+        res.status(500).json({msg: error.message})
+    }
+}
+
 export const getUserById = async (req,res)=>{
     try{
         const response = await Users.findOne({
